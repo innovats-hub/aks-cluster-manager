@@ -72,4 +72,4 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: |
-          terraform apply tfplan -auto-approve
+          terraform apply tfplan
