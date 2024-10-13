@@ -19,25 +19,25 @@ env:
   TF_VAR_cluster_dns_prefix: ${{ vars.TF_VAR_cluster_dns_prefix }}
 
 jobs:
-  # validate_branch:
-  #   name: Validate Source Branch
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Check source branch
-  #       run: |
-  #         BRANCH_NAME=${{ github.head_ref }}
-  #         if [[ ! $BRANCH_NAME =~ ^(release|hotfix)\/.*$ ]]; then
-  #           echo "PRs to master are only allowed from release/* or hotfix/* branches. Current branch is: $BRANCH_NAME"
-  #           exit 1
-  #         fi
+  validate_branch:
+    name: Validate Source Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          BRANCH_NAME=${{ github.head_ref }}
+          if [[ ! $BRANCH_NAME =~ ^(release|hotfix)\/.*$ ]]; then
+            echo "PRs to master are only allowed from release/* or hotfix/* branches. Current branch is: $BRANCH_NAME"
+            exit 1
+          fi
 
   setup-and-validate:
     name: Terraform Setup and Validate
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    # needs:
-    #   - validate_branch
+    needs:
+      - validate_branch
 
     steps:
       - name: Checkout repository
