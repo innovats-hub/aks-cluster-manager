@@ -208,17 +208,6 @@ variable "cluster_network_security_rules" {
       sg_destination_port_range     = "443"
       sg_source_address_prefix      = "*"
       sg_destination_address_prefix = "*"
-    },
-    deny_all = {
-      sg_name                       = "Deny-All"
-      sg_priority                   = 4096
-      sg_direction                  = "Inbound"
-      sg_access                     = "Deny"
-      sg_protocol                   = "*"
-      sg_source_port_range          = "*"
-      sg_destination_port_range     = "*"
-      sg_source_address_prefix      = "*"
-      sg_destination_address_prefix = "*"
     }
   }
 }
