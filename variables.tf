@@ -149,7 +149,7 @@ variable "cluster_additional_nodepool_autoscaling_enabled" {
 variable "cluster_additional_nodepool_autoscaling_min_count" {
   description = "Minimum number of nodes for the additional node pool when autoscaling is enabled."
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "cluster_additional_nodepool_autoscaling_max_count" {
