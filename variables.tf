@@ -50,12 +50,6 @@ variable "cluster_nodepool_name" {
   default     = "admnodes"
 }
 
-variable "cluster_nodepool_count" {
-  description = "The number of nodes in the default node pool."
-  type        = number
-  default     = 1
-}
-
 variable "cluster_nodepool_vmsize" {
   description = "The virtual machine size for the nodes in the default node pool."
   type        = string
@@ -126,12 +120,6 @@ variable "cluster_additional_nodepool_name" {
   description = "The name of the additional node pool for running application workloads."
   type        = string
   default     = "appnodes"
-}
-
-variable "cluster_additional_nodepool_count" {
-  description = "The number of nodes in the additional node pool for application workloads."
-  type        = number
-  default     = 2
 }
 
 variable "cluster_additional_nodepool_vmsize" {
