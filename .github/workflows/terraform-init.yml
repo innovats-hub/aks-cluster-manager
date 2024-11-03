@@ -86,3 +86,7 @@ jobs:
           terraform-text: ${{ github.workspace }}/pr-tfplan.text
           terraform-json: ${{ github.workspace }}/pr-tfplan.json
           remove-stale-reports: true
+
+      - name: Terraform Destroy
+        id: destroy
+        run: terraform destroy -auto-approve
