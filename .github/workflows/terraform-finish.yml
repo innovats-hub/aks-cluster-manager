@@ -69,7 +69,12 @@ jobs:
           path: tfplan
           retention-days: 1
 
-      - name: Terraform Apply
-        id: apply
+      # - name: Terraform Apply
+      #   id: apply
+      #   run: |
+      #     terraform apply tfplan
+
+      - name: Terraform Destroy
+        id: destroy
         run: |
-          terraform apply tfplan
+          terraform destroy --auto-aprove
